@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-docker build -t gorillastack/buildkite-agent-aws .
+docker build -t gorillastack/buildkite-agent-jekyll .

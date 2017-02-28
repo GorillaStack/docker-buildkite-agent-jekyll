@@ -22,6 +22,10 @@ echo ">> Buildkite version: "
 docker run --rm --entrypoint "buildkite-agent" "${DOCKER_IMAGE_NAME}" --version
 echo -e "\033[33;32mOk\033[0m"
 
+echo -e ">> Checking that jekyll is installed on ${DOCKER_IMAGE_NAME}"
+docker run --rm --entrypoint "/bin/bash" "${DOCKER_IMAGE_NAME}"  -c 'jekyll --version'
+echo -e "\033[33;32mOk\033[0m"
+
 echo -e ">> Checking that the AWS CLI is installed on ${DOCKER_IMAGE_NAME}"
 docker run --rm --entrypoint "/bin/bash" "${DOCKER_IMAGE_NAME}"  -c 'aws --version'
 echo -e "\033[33;32mOk\033[0m"
